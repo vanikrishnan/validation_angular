@@ -1,0 +1,68 @@
+<!-- <div class="container" *ngIf="idformgroup"> -->
+    <h1 id="header">Employee ID Card Form</h1>
+<form [formGroup]="idformgroup">
+  <div class="form-row align-items-center">
+<div class="form-group">
+  <label for="firstName" class="col-md-12">First Name</label>
+  <input type="text" class="col-12  p-3 mb-2 bg-primary text-white"  formControlName="firstName" id="firstName" maxlength=10  >
+  <span class="span-for-errors" id="errForFirstName" *ngIf="idformgroup.get('firstName').touched && idformgroup.get('firstName').errors">Please enter your preferred name as first name</span>
+</div><br>
+<div class="form-group">
+  <label for="fullName" class="col-md-12">Full Name</label>
+  <input type="text" class="col-12  p-3 mb-2 bg-primary text-white" formControlName="fullName"       id="fullName" maxlength=20 >
+  <span class="span-for-errors" id="errForFullName" *ngIf="idformgroup.get('fullName').touched && idformgroup.get('fullName').errors">Please enter your full name</span>
+</div><br>
+<div class="form-group">
+  <label for="designation" class="col-md-12">Designation</label>
+  <input type="text" class="col-12 p-3 mb-2 bg-primary text-white" formControlName="desig" id="designation" maxlength=25 >
+  <span class="span-for-errors" id="errForDesignation" *ngIf="idformgroup.get('desig').touched && idformgroup.get('desig').errors">Please enter your designation</span>
+</div><br>
+<div class="form-group">
+  <label for="employeecode" class="col-md-12">Employeecode</label>
+  <input type="text" class="col-12  p-3 mb-2 bg-primary text-white" formControlName="empcode"  id="employeecode" maxlength=7 >
+  <span class="span-for-errors" id="errForEmployeecode" *ngIf="idformgroup.get('empcode').touched && idformgroup.get('empcode').errors">Please enter your employee code</span>
+</div><br>
+<div class="form-group">
+  <label for="bloodgroup" class="col-md-12">Bloodgroup</label>
+  <input type="text"  class="col-12  p-3 mb-2 bg-primary text-white" formControlName="bg" id="bloodgroup">
+  <span class="span-for-errors" id="errForBloodgroup" *ngIf="idformgroup.get('bg').touched && idformgroup.get('bg').errors">Please enter your blood group</span>
+</div><br>
+<div class="form-group">
+  <label for="reason" class="col-md-12">Reason</label>
+  <select id="re" class="col-12 p-3 mb-2 bg-primary text-white" formControlName="reason" >
+          <option value="">None</option>
+      <option value="New Employee">New Employee</option>
+      <option value="Lost">Lost</option>
+      <option value="Conversion">Conversion</option>
+      <option value="Defaced">Defaced</option>
+      <option value="Designation Changed">Designation Changed</option>
+    </select>
+      
+  <span class="span-for-errors" id="errForReason" *ngIf="idformgroup.get('reason').touched && idformgroup.get('reason').errors">Please enter your reason</span>
+</div><br>
+<div class="form-group">
+  <label for="dateofemployment" class="col-md-12">Date Of Employment</label>
+  <input type="date"   class="col-12  p-3 mb-2 bg-primary text-white" formControlName="dateofemp" id="dateofemployment">
+  <span class="span-for-errors" id="errForDateOfEmployment" *ngIf="idformgroup.get('dateofemp').touched && idformgroup.get('dateofemp').errors">Please enter your date of employment</span>
+</div><br>
+<div class="form-group">
+  <label for="mailid" class="col-md-12">E-mailid</label>
+  <input type="text"  class="col-12  p-3 mb-2 bg-primary text-white" formControlName="email"id="mailid">
+  <span class="span-for-errors" id="errFormailid" *ngIf="idformgroup.get('email').touched && idformgroup.get('email').errors">Please enter your mailid</span>
+</div><br>
+<div [formGroup]="idformgroup.get(contactFormGroup)">
+<div class="form-group">
+  <label for="phoneno" class="col-md-12">Phone no</label>
+  <input type="text" class="col-12  p-3 mb-2 bg-primary text-white"  formControlName="phno" id="phoneno" maxlength=10>
+  <span class="span-for-errors" id="errForphoneno" *ngIf="idformgroup.get('phno').touched && idformgroup.get('phno').errors">Please enter your phoneno</span>
+</div><br>
+<div class="form-group">
+  <label for="contactno" class="col-md-12">Contact no</label>
+  <input type="text"  class="col-12 p-3 mb-2 bg-primary text-white" formControlName="contno" id="contactno" maxlength=10 >
+  <span class="span-for-errors" id="errForcontactno" *ngIf="idformgroup.get('contno').touched && idformgroup.get('contno').errors">Please enter your contactno</span>
+</div><br>
+</div>
+<button type="button" class="btn btn-success" [disabled]="idformgroup.invalid"  (click)="addDetails()">Submit</button>
+</div>
+</form>
+<!-- </div> -->
